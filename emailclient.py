@@ -98,7 +98,7 @@ def _fetch_emails_sync(creds: env.RegisteredEmail) -> list[ProcessedEmail]:
     mail = imaplib.IMAP4_SSL(creds.imap_host, creds.imap_port)
     rc, resp = mail.login(creds.email_user, creds.email_pass)
 
-    mail.select('Inbox')
+    mail.select('Discord')
     status, data = mail.search(None, '(UNSEEN)')
 
     emails = []
